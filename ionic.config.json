@@ -1,5 +1,8 @@
 {
   "name": "ob",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "f35010cf",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

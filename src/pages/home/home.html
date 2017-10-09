@@ -8,11 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div *ngIf="isCamOn">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col col-8>
+          <img src="assets/img/burun.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button (click)="openCam()" ion-button secondary>Foto</button>
 </ion-content>
