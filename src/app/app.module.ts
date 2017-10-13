@@ -11,6 +11,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { CameraPreview } from '@ionic-native/camera-preview';
+import { Device } from '@ionic-native/device';
+import { OneSignal} from '@ionic-native/onesignal';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { CameraPreview } from '@ionic-native/camera-preview';
   providers: [
     StatusBar,
     SplashScreen,
+    Device,
+    OneSignal,
     AndroidPermissions,
     Diagnostic,
     CameraPreview,

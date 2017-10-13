@@ -8,16 +8,17 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="isCamOn">
+  <div *ngIf="!isCamOn">
     <ion-grid>
       <ion-row justify-content-center>
         <ion-col col-8>
-          <img src="assets/img/burun.png">
+          <img src="assets/img/burun2.png">
         </ion-col>
       </ion-row>
     </ion-grid>
   </div>
-
+  
+  <h1>{{deviceID}}</h1>
   <button (click)="openCam()" ion-button secondary>Front</button>
   <button (click)="openCamBack()" ion-button secondary>Back</button>
 </ion-content>

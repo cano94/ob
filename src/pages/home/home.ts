@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController, Platform } from 'ionic-angular';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview';
+import { Device } from '@ionic-native/device';
 
 @Component({
   selector: 'page-home',
@@ -10,9 +11,11 @@ import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, Camer
 export class HomePage {
   isCamOn: boolean = false;
   picture: any;
+  deviceID:any;
 
-  constructor(public navCtrl: NavController, private diagnostic: Diagnostic, public toastCtrl: ToastController, private platform: Platform, private cameraPreview: CameraPreview) {
+  constructor(public navCtrl: NavController, private diagnostic: Diagnostic, public toastCtrl: ToastController,private device: Device, private platform: Platform, private cameraPreview: CameraPreview) {
     this.check();
+    this.deviceID = this.device.uuid;
   }
 
   public check() {

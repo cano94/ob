@@ -14,17 +14,28 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage }
     ];
 
+    // OneSignal Code start:
+    // Enable to debug issues:
+    // window["plugins"].OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+    var notificationOpenedCallback = function (jsonData) {
+      console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+    };
+
+    window["plugins"].OneSignal
+      .startInit("06dd03d9-5a81-44ef-9f98-6f251cd3d66c", "906018807245")
+      .handleNotificationOpened(notificationOpenedCallback)
+      .endInit();
   }
 
   initializeApp() {
